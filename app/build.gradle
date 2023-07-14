@@ -6,7 +6,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "gr.nikolasspyr.integritycheck"
+        applicationId "khem.nikolasspyr.integritycheck"
         minSdk 21
         targetSdk 33
         versionCode 10
@@ -35,7 +35,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    namespace 'gr.nikolasspyr.integritycheck'
+    namespace 'khem.nikolasspyr.integritycheck'
 
     tasks.whenTaskAdded { task ->
         switch (task.name) {

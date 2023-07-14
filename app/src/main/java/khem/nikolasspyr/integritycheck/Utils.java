@@ -1,4 +1,4 @@
-package gr.nikolasspyr.integritycheck;
+package khem.nikolasspyr.integritycheck;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;

@@ -27,7 +27,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 For more information, please refer to <https://unlicense.org>
 */
 
-package gr.nikolasspyr.integritycheck.async;
+package khem.nikolasspyr.integritycheck.async;
 
 import java.util.concurrent.ExecutorService;
 

@@ -1,4 +1,4 @@
-package gr.nikolasspyr.integritycheck.dialogs;
+package khem.nikolasspyr.integritycheck.dialogs;
 
 import android.content.Context;
 import android.view.View;
@@ -9,9 +9,9 @@ import androidx.appcompat.app.AlertDialog;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
-import gr.nikolasspyr.integritycheck.BuildConfig;
-import gr.nikolasspyr.integritycheck.R;
-import gr.nikolasspyr.integritycheck.Utils;
+import khem.nikolasspyr.integritycheck.BuildConfig;
+import khem.nikolasspyr.integritycheck.R;
+import khem.nikolasspyr.integritycheck.Utils;
 
 
 public class AboutDialog {

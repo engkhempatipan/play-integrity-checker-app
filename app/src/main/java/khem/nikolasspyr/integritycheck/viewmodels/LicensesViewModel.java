@@ -1,4 +1,4 @@
-package gr.nikolasspyr.integritycheck.viewmodels;
+package khem.nikolasspyr.integritycheck.viewmodels;
 
 import android.app.Application;
 import android.content.res.AssetManager;
@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import gr.nikolasspyr.integritycheck.entities.License;
+import khem.nikolasspyr.integritycheck.entities.License;
 
 public class LicensesViewModel extends AndroidViewModel {
 

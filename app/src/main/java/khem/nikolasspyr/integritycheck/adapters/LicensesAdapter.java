@@ -1,4 +1,4 @@
-package gr.nikolasspyr.integritycheck.adapters;
+package khem.nikolasspyr.integritycheck.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import gr.nikolasspyr.integritycheck.R;
-import gr.nikolasspyr.integritycheck.entities.License;
+import khem.nikolasspyr.integritycheck.R;
+import khem.nikolasspyr.integritycheck.entities.License;
 
 
 public class LicensesAdapter extends RecyclerView.Adapter<LicensesAdapter.ViewHolder> {

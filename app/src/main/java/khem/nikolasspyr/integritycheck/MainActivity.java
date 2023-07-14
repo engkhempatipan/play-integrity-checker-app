@@ -1,4 +1,4 @@
-package gr.nikolasspyr.integritycheck;
+package khem.nikolasspyr.integritycheck;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -27,8 +27,8 @@ import com.google.android.play.core.integrity.model.IntegrityErrorCode;
 
 import org.json.JSONObject;
 
-import gr.nikolasspyr.integritycheck.async.AsyncTask;
-import gr.nikolasspyr.integritycheck.dialogs.AboutDialog;
+import khem.nikolasspyr.integritycheck.async.AsyncTask;
+import khem.nikolasspyr.integritycheck.dialogs.AboutDialog;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;

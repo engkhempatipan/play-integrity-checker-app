@@ -1,4 +1,4 @@
-package gr.nikolasspyr.integritycheck.entities;
+package khem.nikolasspyr.integritycheck.entities;
 
 public class License {
 

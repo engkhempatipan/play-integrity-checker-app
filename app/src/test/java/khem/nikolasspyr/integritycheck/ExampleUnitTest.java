@@ -1,4 +1,4 @@
-package gr.nikolasspyr.integritycheck;
+package khem.nikolasspyr.integritycheck;
 
 import org.junit.Test;
 
