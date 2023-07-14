@@ -6,6 +6,8 @@ import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Base64;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,6 +28,8 @@ import com.google.android.play.core.integrity.IntegrityTokenResponse;
 import com.google.android.play.core.integrity.model.IntegrityErrorCode;
 
 import org.json.JSONObject;
+
+import java.security.SecureRandom;
 
 import khem.nikolasspyr.integritycheck.async.AsyncTask;
 import khem.nikolasspyr.integritycheck.dialogs.AboutDialog;
@@ -64,14 +68,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getToken() {
-        String nonce = generateNonce();
-
+        String nonce = generateNonceByte();
+        Log.d("---Debug---","generate Nonce:"+nonce);
         // Create an instance of a manager.
         IntegrityManager integrityManager = IntegrityManagerFactory.create(getApplicationContext());
 
         // Request the integrity token by providing a nonce.
         Task<IntegrityTokenResponse> integrityTokenResponse = integrityManager.requestIntegrityToken(
                 IntegrityTokenRequest.builder()
+                        .setCloudProjectNumber(397536643580L)
                         .setNonce(nonce)
                         .build());
 
@@ -97,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                     .get()
                     .url(BuildConfig.API_URL + "/api/check?token=" + token)
                     .build();
-
+            Log.d("---Debug---","Request Token JWE_JWS:"+token);
             Response response = client.newCall(request).execute();
 
             if (!response.isSuccessful()) {
@@ -122,8 +127,8 @@ public class MainActivity extends AppCompatActivity {
                 hasError = true;
                 return new String[]{"Api request error", "Response does not contain deviceIntegrity"};
             }
-
             jsonResponse = json.toString(4);
+            Log.d("---Debug---","Node jsonResponse:"+jsonResponse);
             return new String[]{json.getJSONObject("deviceIntegrity").toString()};
         }
 
@@ -180,6 +185,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public static String generateNonceByte() {
+
+        SecureRandom random = new SecureRandom();
+
+        byte[] nonceBytes = new byte[50];
+
+        random.nextBytes(nonceBytes);
+
+        return Base64.encodeToString(nonceBytes,  Base64.NO_WRAP | Base64.URL_SAFE);
+
+    }
     private String generateNonce() {
         int length = 50;
         String nonce = "";
